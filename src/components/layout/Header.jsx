@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import { useEconomic } from '../../context/EconomicContext';
 import { useTheme } from '../../context/ThemeContext';
-import { MdRefresh, MdNotificationsNone, MdAccessTime, MdLightMode, MdDarkMode } from 'react-icons/md';
+import { MdRefresh, MdNotificationsNone, MdAccessTime, MdLightMode, MdDarkMode, MdMenu } from 'react-icons/md';
 import './Header.css';
 
 const PAGE_TITLES = {
@@ -14,7 +14,7 @@ const PAGE_TITLES = {
   '/about':      { title: 'About Project', sub: 'EconoMind AI — Research Paper Summary' },
 };
 
-export default function Header() {
+export default function Header({ toggleSidebar }) {
   const location = useLocation();
   const { country, countries, setCountry, refresh, loading, riskLevel } = useEconomic();
   const { theme, toggleTheme } = useTheme();
@@ -30,6 +30,9 @@ export default function Header() {
   return (
     <header className="app-header">
       <div className="header-left">
+        <button className="header-icon-btn mobile-menu-btn" onClick={toggleSidebar} title="Menu">
+          <MdMenu />
+        </button>
         <div>
           <h1 className="header-title">{page.title}</h1>
           <p className="header-sub">{page.sub}</p>

@@ -15,11 +15,11 @@ const NAV = [
   { to: '/about',      icon: <MdInfo />,        label: 'About'        },
 ];
 
-export default function Sidebar() {
+export default function Sidebar({ isOpen, closeSidebar }) {
   const { logout, user } = useAuth();
 
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
       {/* Logo */}
       <div className="sidebar-logo">
         <div className="sidebar-logo-icon"><MdAutoGraph /></div>
@@ -38,6 +38,7 @@ export default function Sidebar() {
             key={to}
             to={to}
             end={to === '/'}
+            onClick={closeSidebar}
             className={({ isActive }) => `sidebar-link${isActive ? ' active' : ''}`}
           >
             <span className="sidebar-link-icon">{icon}</span>

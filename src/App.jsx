@@ -1,3 +1,4 @@
+import { useState } from 'react';
 import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { AuthProvider, useAuth } from './context/AuthContext';
 import { EconomicProvider } from './context/EconomicContext';
@@ -14,6 +15,11 @@ import About       from './pages/About';
 
 function ProtectedLayout() {
   const { isAuthenticated, loading } = useAuth();
+  const [sidebarOpen, setSidebarOpen] = useState(false);
+
+  const toggleSidebar = () => setSidebarOpen(prev => !prev);
+  const closeSidebar = () => setSidebarOpen(false);
+
   if (loading) return (
     <div style={{ display:'flex', alignItems:'center', justifyContent:'center', height:'100vh', background:'#0A0E1A' }}>
       <div style={{ textAlign:'center' }}>
@@ -26,9 +32,10 @@ function ProtectedLayout() {
   return (
     <EconomicProvider>
       <div className="app-layout">
-        <Sidebar />
+        <Sidebar isOpen={sidebarOpen} closeSidebar={closeSidebar} />
+        {sidebarOpen && <div className="sidebar-overlay" onClick={closeSidebar} />}
         <div className="main-content">
-          <Header />
+          <Header toggleSidebar={toggleSidebar} />
           <Routes>
             <Route path="/"           element={<Dashboard />} />
             <Route path="/forecasting"element={<Forecasting />} />
