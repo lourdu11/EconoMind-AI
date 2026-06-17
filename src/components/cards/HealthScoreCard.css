@@ -1,0 +1,14 @@
+.health-card { padding: var(--space-5); cursor: default; }
+.health-glow-line { position: absolute; top:0; left:0; right:0; height:2px; border-radius: var(--radius-xl) var(--radius-xl) 0 0; }
+.health-header { display:flex; align-items:center; justify-content:space-between; margin-bottom: var(--space-4); }
+.health-title { font-size: var(--font-xs); font-weight:600; color: var(--text-muted); text-transform:uppercase; letter-spacing:0.07em; }
+.health-ai-badge { font-size: var(--font-xs); background: rgba(99,102,241,0.1); border: 1px solid rgba(99,102,241,0.2); padding: 2px 8px; border-radius: var(--radius-full); color: var(--color-primary-light); }
+.health-body { display:flex; align-items:center; gap: var(--space-6); }
+.health-gauge-wrap { display:flex; flex-direction:column; align-items:center; flex-shrink:0; }
+.health-gauge-label { font-size: var(--font-xs); font-weight:700; margin-top: var(--space-1); letter-spacing:0.05em; text-transform:uppercase; }
+.health-metrics { flex:1; display:flex; flex-direction:column; gap: var(--space-3); }
+.health-metric-row { display:flex; align-items:center; gap: var(--space-2); }
+.health-metric-label { font-size: var(--font-xs); color: var(--text-muted); width: 80px; flex-shrink:0; }
+.health-metric-bar-bg { flex:1; height:6px; background: var(--border-glass); border-radius: var(--radius-full); overflow:hidden; }
+.health-metric-bar { height:100%; border-radius: var(--radius-full); transition: width 1.2s cubic-bezier(0.4,0,0.2,1); }
+.health-metric-val { font-size: var(--font-xs); color: var(--text-muted); width:35px; text-align:right; font-variant-numeric:tabular-nums; }

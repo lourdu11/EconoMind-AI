@@ -1,0 +1,39 @@
+/* ═══════════════════════════════════════
+   RESPONSIVE BREAKPOINTS
+═══════════════════════════════════════ */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  :root { --sidebar-width: 220px; }
+  .grid-4 { grid-template-columns: repeat(2, 1fr); }
+  .grid-3 { grid-template-columns: repeat(2, 1fr); }
+  .page-content { padding: var(--space-6); }
+}
+
+/* Mobile */
+@media (max-width: 768px) {
+  :root { --sidebar-width: 0px; }
+
+  .app-layout { flex-direction: column; }
+  .main-content { margin-left: 0; }
+
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    z-index: 999;
+    transition: left var(--transition-base);
+    width: 260px !important;
+  }
+  .sidebar.open { left: 0; }
+
+  .grid-4, .grid-3, .grid-2 { grid-template-columns: 1fr; }
+  .page-content { padding: var(--space-4); }
+  h1 { font-size: var(--font-2xl); }
+  h2 { font-size: var(--font-xl); }
+}
+
+/* Large screens */
+@media (min-width: 1440px) {
+  .page-content { padding: var(--space-10); }
+  .grid-4 { grid-template-columns: repeat(4, 1fr); }
+}

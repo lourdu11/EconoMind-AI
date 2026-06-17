@@ -1,0 +1,96 @@
+.kpi-card {
+  padding: var(--space-5);
+  cursor: default;
+  position: relative;
+  border-color: rgba(var(--kpi-color, 99,102,241), 0.15);
+  transition: all var(--transition-base);
+}
+
+.kpi-card:hover {
+  border-color: var(--kpi-color, var(--color-primary));
+  box-shadow: 0 8px 32px color-mix(in srgb, var(--kpi-color, var(--color-primary)) 20%, transparent);
+  transform: translateY(-4px);
+}
+
+.kpi-glow-line {
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: var(--kpi-color, var(--color-primary));
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  opacity: 0.8;
+}
+
+.kpi-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: var(--space-3);
+}
+
+.kpi-title {
+  font-size: var(--font-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+}
+
+.kpi-icon-wrap {
+  width: 36px; height: 36px;
+  background: color-mix(in srgb, var(--kpi-color, var(--color-primary)) 15%, transparent);
+  border: 1px solid color-mix(in srgb, var(--kpi-color, var(--color-primary)) 30%, transparent);
+  border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.1rem;
+}
+
+.kpi-value-row {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-1);
+  margin-bottom: var(--space-2);
+}
+
+.kpi-value {
+  font-size: var(--font-4xl);
+  font-weight: 700;
+  color: var(--text-primary);
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+}
+
+.kpi-unit {
+  font-size: var(--font-lg);
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.kpi-change {
+  display: flex;
+  align-items: center;
+  gap: var(--space-1);
+  font-size: var(--font-xs);
+  font-weight: 500;
+  margin-bottom: var(--space-4);
+}
+
+.kpi-change.positive { color: var(--color-accent); }
+.kpi-change.negative { color: var(--color-danger); }
+
+.kpi-change-arrow { font-size: 0.65rem; }
+
+.kpi-bar-bg {
+  height: 4px;
+  background: var(--border-glass);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.kpi-bar-fill {
+  height: 100%;
+  background: var(--kpi-color, var(--color-primary));
+  border-radius: var(--radius-full);
+  transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
+  max-width: 100%;
+}

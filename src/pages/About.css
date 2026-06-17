@@ -1,0 +1,37 @@
+.about-banner { display:flex; justify-content:space-between; align-items:center; gap: var(--space-6); flex-wrap:wrap; margin-bottom: var(--space-8); }
+.about-banner-left { display:flex; align-items:center; gap: var(--space-5); }
+.about-logo { font-size:4rem; }
+.about-project-title { font-size: var(--font-2xl); font-weight:800; background: var(--gradient-primary); -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text; margin-bottom: var(--space-1); line-height: 1.4; padding-bottom: 0.1em; }
+.about-project-sub { font-size: var(--font-sm); color: var(--text-muted); margin-bottom: var(--space-3); }
+.about-tags { display:flex; flex-wrap:wrap; gap: var(--space-2); }
+.about-tag { font-size: var(--font-xs); padding:2px 10px; border-radius: var(--radius-full); border: 1px solid var(--border-glass); color: var(--text-muted); }
+.about-tag.primary { background: rgba(99,102,241,0.1); border-color: rgba(99,102,241,0.25); color: var(--color-primary-light); }
+.about-tag.accent  { background: rgba(16,185,129,0.1); border-color: rgba(16,185,129,0.25); color: var(--color-accent-light); }
+.about-author-card { display:flex; align-items:center; gap: var(--space-3); background: var(--bg-surface); border: 1px solid var(--border-glass); border-radius: var(--radius-lg); padding: var(--space-4) var(--space-5); }
+.about-author-avatar { width:48px; height:48px; background: var(--gradient-primary); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size: var(--font-base); font-weight:800; color:white; flex-shrink:0; }
+.about-author-name { font-size: var(--font-base); font-weight:700; }
+.about-author-role { font-size: var(--font-xs); color: var(--color-primary-light); }
+.about-author-topic { font-size: var(--font-xs); color: var(--text-muted); }
+.abstract-text { font-size: var(--font-sm); color: var(--text-secondary); line-height:1.9; margin-bottom: var(--space-4); }
+.abstract-text:last-child { margin-bottom:0; }
+.objectives-list { display:flex; flex-direction:column; gap: var(--space-3); }
+.objective-item { display:flex; align-items:center; gap: var(--space-4); cursor:default; }
+.objective-num { font-size: var(--font-3xl); font-weight:800; color: rgba(99,102,241,0.15); line-height:1.2; flex-shrink:0; width:48px; }
+.objective-icon { font-size:1.5rem; flex-shrink:0; }
+.objective-text { font-size: var(--font-sm); color: var(--text-secondary); line-height:1.7; }
+.keywords-wrap { display:flex; flex-wrap:wrap; gap: var(--space-2); }
+.keyword-chip { font-size: var(--font-xs); padding: var(--space-2) var(--space-3); background: rgba(99,102,241,0.08); border: 1px solid rgba(99,102,241,0.2); border-radius: var(--radius-full); color: var(--color-primary-light); font-weight:500; transition: all var(--transition-fast); }
+.keyword-chip:hover { background: rgba(99,102,241,0.15); }
+.future-grid { display:grid; grid-template-columns:repeat(3,1fr); gap: var(--space-4); }
+@media (max-width:900px) { .future-grid { grid-template-columns:repeat(2,1fr); } }
+.future-card { text-align:center; cursor:default; }
+.future-icon { font-size:2.5rem; display:block; margin-bottom: var(--space-3); }
+.future-title { font-size: var(--font-sm); font-weight:700; color: var(--text-primary); margin-bottom: var(--space-2); }
+.future-desc { font-size: var(--font-xs); color: var(--text-muted); line-height:1.6; }
+.refs-card { display:flex; flex-direction:column; gap: var(--space-4); }
+.ref-item { display:flex; gap: var(--space-3); align-items:flex-start; }
+.ref-num { font-size: var(--font-xs); font-weight:700; color: var(--color-primary); background: rgba(99,102,241,0.1); padding:1px 8px; border-radius: var(--radius-sm); flex-shrink:0; }
+.ref-text { font-size: var(--font-xs); color: var(--text-secondary); line-height:1.7; }
+.ack-card {}
+.ack-text { font-size: var(--font-sm); color: var(--text-secondary); line-height:1.9; margin-bottom: var(--space-4); }
+.ack-signature { font-size: var(--font-base); color: var(--text-primary); padding-top: var(--space-2); border-top: 1px solid var(--border-glass); }
