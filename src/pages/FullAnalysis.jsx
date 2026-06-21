@@ -10,6 +10,18 @@ export default function FullAnalysis() {
 
       <div className="analysis-content">
 
+        {/* Dashboard Approach */}
+        <section className="analysis-section glass-card glass-inner animate-fade-in-up">
+          <h2>Dashboard Approach</h2>
+          <p>For this dashboard, the best and most accurate approach is:</p>
+          <ol className="analysis-list" style={{ listStyleType: 'decimal', paddingLeft: 'var(--space-6)' }}>
+            <li>Use real IMF/World Bank/OECD data for GDP, inflation, unemployment, trade, etc.</li>
+            <li>Use AI to generate evidence-based impact explanations based on those indicators.</li>
+            <li>Clearly mention that the impact analysis is generated from economic indicators and historical trends.</li>
+          </ol>
+          <p>This ensures the project is highly professional and transparent.</p>
+        </section>
+
         {/* 1. AI Economic Impact Analysis */}
         <section className="analysis-section glass-card glass-inner animate-fade-in-up">
           <h2>1. AI Economic Impact Analysis</h2>
@@ -331,10 +343,29 @@ export default function FullAnalysis() {
               <p>Supply chain issues and energy prices caused high inflation.</p>
               <p><strong>Importance of AI:</strong> AI predicts inflation trends to support policy decisions.</p>
             </div>
+            <div className="methodology-card">
+              <h4>Growth of AI in Economic Analysis (2023–Present)</h4>
+              <p>Governments, financial institutions, and businesses increasingly adopted AI technologies to analyze economic data.</p>
+              <strong>Economic Impact:</strong>
+              <ul className="analysis-list" style={{ marginTop: 'var(--space-2)' }}>
+                <li>Faster economic analysis.</li>
+                <li>Better forecasting capabilities.</li>
+                <li>Improved decision-making.</li>
+                <li>Enhanced risk management.</li>
+              </ul>
+              <p><strong>Importance of AI:</strong> AI has become a valuable tool for predicting economic trends and supporting data-driven decision-making.</p>
+            </div>
           </div>
           
           <p style={{ marginTop: 'var(--space-4)' }}>
             <strong>Sources:</strong> International Monetary Fund Reports, World Bank Economic Updates, OECD Economic Outlook Reports, World Economic Forum Economic Analysis Reports.
+          </p>
+        </section>
+
+        {/* Conclusion Statement */}
+        <section className="analysis-section glass-card glass-inner animate-fade-in-up" style={{ animationDelay: '0.8s' }}>
+          <p style={{ fontSize: '1.1em', fontWeight: '500', color: 'var(--text-primary)', textAlign: 'center' }}>
+            This approach is both realistic and academically correct: the numbers come from real sources, and the impact explanations are AI-generated interpretations based on those real economic indicators. That is exactly how many professional forecasting dashboards operate. 📊🤖🌍📈
           </p>
         </section>
 
