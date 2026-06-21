@@ -13,7 +13,7 @@ const METHODOLOGY_STEPS = [
   { icon:'🧹', step:'02', title:'Data Collection',   desc:'Secondary research methodology using quantitative and qualitative data' },
   { icon:'⚙️', step:'03', title:'Data Processing',   desc:'Cleaning, normalization, feature selection, handling missing values' },
   { icon:'🤖', step:'04', title:'AI Model Training', desc:'Linear Regression, Decision Tree, Random Forest, Neural Networks' },
-  { icon:'📊', step:'05', title:'Model Testing',     desc:'Accuracy, Precision, Recall, F1 Score evaluation on unseen data' },
+  { icon:'📊', step:'05', title:'Model Testing',     desc:'R² Score, MAE, MSE, RMSE evaluation on unseen data' },
   { icon:'🔮', step:'06', title:'Forecast Output',   desc:'GDP, Inflation, Unemployment, Consumer Spending predictions' },
   { icon:'📋', step:'07', title:'Decision Support',  desc:'Policy insights, risk analysis, economic planning recommendations' },
 ];

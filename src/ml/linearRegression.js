@@ -5,7 +5,7 @@ import { linearRegression, linearRegressionLine } from 'simple-statistics';
  * Uses simple-statistics library for pure JS LR
  */
 export const runLinearRegression = (historicalData, forecastYears = 3) => {
-  if (!historicalData || historicalData.length < 3) return { forecast: [], accuracy: 0 };
+  if (!historicalData || historicalData.length < 3) return { forecast: [], r2: 0 };
 
   const points = historicalData.map(d => [d.year, d.value]);
   const reg = linearRegression(points);
@@ -26,21 +26,23 @@ export const runLinearRegression = (historicalData, forecastYears = 3) => {
     });
   }
 
-  // Calculate R² accuracy
+  // Calculate R², MAE, MSE, RMSE
   const mean = historicalData.reduce((s, d) => s + d.value, 0) / historicalData.length;
   const ssTot = historicalData.reduce((s, d) => s + Math.pow(d.value - mean, 2), 0);
   const ssRes = historicalData.reduce((s, d) => s + Math.pow(d.value - regLine(d.year), 2), 0);
-  const r2 = Math.max(0, Math.min(1, 1 - ssRes / ssTot));
-  const accuracy = parseFloat((r2 * 100).toFixed(1));
+  const r2 = ssTot === 0 ? 1 : Math.max(0, Math.min(1, 1 - ssRes / ssTot));
+  const mse = ssRes / historicalData.length;
+  const rmse = Math.sqrt(mse);
+  const mae = historicalData.reduce((s, d) => s + Math.abs(d.value - regLine(d.year)), 0) / historicalData.length;
 
   return {
     forecast,
-    accuracy,
+    r2: parseFloat(r2.toFixed(4)),
     metrics: {
-      accuracy: Math.min(92, accuracy + 5).toFixed(1),
-      precision: (Math.min(92, accuracy + 5) - 2).toFixed(1),
-      recall:    (Math.min(92, accuracy + 5) - 3).toFixed(1),
-      f1:        (Math.min(92, accuracy + 5) - 2.5).toFixed(1),
+      r2: r2.toFixed(3),
+      mae: mae.toFixed(3),
+      mse: mse.toFixed(3),
+      rmse: rmse.toFixed(3),
     },
     slope: reg.m.toFixed(4),
     intercept: reg.b.toFixed(4),

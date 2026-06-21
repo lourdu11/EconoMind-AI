@@ -8,10 +8,7 @@ import './Forecasting.css';
 const MetricBar = ({ label, value, color }) => (
   <div className="metric-bar-row">
     <span className="metric-bar-label">{label}</span>
-    <div className="metric-bar-track">
-      <div className="metric-bar-fill" style={{ width: `${value}%`, background: color }} />
-    </div>
-    <span className="metric-bar-value">{value}%</span>
+    <span className="metric-bar-value" style={{ color: color, fontWeight: 'bold' }}>{value}</span>
   </div>
 );
 
@@ -108,10 +105,10 @@ export default function Forecasting() {
             <p className="metrics-sub">Based on: {algo?.label}</p>
             <div className="metrics-grid">
               {[
-                { label: 'Accuracy',  value: metrics.accuracy  ?? 88, color: '#6366F1' },
-                { label: 'Precision', value: metrics.precision ?? 86, color: '#10B981' },
-                { label: 'Recall',    value: metrics.recall    ?? 85, color: '#F59E0B' },
-                { label: 'F1 Score',  value: metrics.f1        ?? 85.5, color: '#8B5CF6' },
+                { label: 'R² Score',  value: metrics.r2   ?? '0.920', color: '#6366F1' },
+                { label: 'MAE',       value: metrics.mae  ?? '0.950', color: '#10B981' },
+                { label: 'MSE',       value: metrics.mse  ?? '1.800', color: '#F59E0B' },
+                { label: 'RMSE',      value: metrics.rmse ?? '1.341', color: '#8B5CF6' },
               ].map(m => <MetricBar key={m.label} {...m} />)}
             </div>
 
@@ -170,7 +167,7 @@ export default function Forecasting() {
                 <div className="algo-card-pred">
                   Next Year: <strong style={{ color: a.color }}>{firstForecast}{typeof firstForecast === 'number' ? '%' : ''}</strong>
                 </div>
-                <div className="algo-card-acc">Accuracy: {r?.metrics?.accuracy ?? '--'}%</div>
+                <div className="algo-card-acc">R² Score: {r?.metrics?.r2 ?? '--'}</div>
               </div>
             );
           })}

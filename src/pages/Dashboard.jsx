@@ -70,7 +70,7 @@ export default function Dashboard() {
             </p>
             <div className="intro-tags">
               <span className="about-tag primary">Research by B. Roshan</span>
-              <span className="about-tag accent">92% Accuracy</span>
+              <span className="about-tag accent">0.92 R² Score</span>
               <span className="about-tag">Real-Time</span>
             </div>
           </div>

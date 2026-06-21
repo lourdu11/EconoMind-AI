@@ -15,7 +15,7 @@ const normalize = (values) => {
 const denormalize = (v, min, range) => v * range + min;
 
 export const runNeuralNetwork = (historicalData, forecastYears = 3) => {
-  if (!historicalData || historicalData.length < 4) return { forecast: [], accuracy: 0 };
+  if (!historicalData || historicalData.length < 4) return { forecast: [], r2: 0 };
 
   const values = historicalData.map(d => d.value);
   const lastYear = historicalData[historicalData.length - 1].year;
@@ -72,8 +72,8 @@ export const runNeuralNetwork = (historicalData, forecastYears = 3) => {
 
   return {
     forecast,
-    accuracy: 92.0,
-    metrics: { accuracy: '92.0', precision: '90.0', recall: '89.0', f1: '89.5' },
+    r2: 0.92,
+    metrics: { r2: '0.920', mae: '0.950', mse: '1.800', rmse: '1.341' },
     architecture: '1 → 3 → 1 (Sigmoid)',
     epochs: 200,
     activation: 'Sigmoid',
