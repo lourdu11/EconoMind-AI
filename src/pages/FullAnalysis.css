@@ -93,3 +93,62 @@
   margin-bottom: var(--space-2);
   font-size: var(--font-lg);
 }
+
+/* Analysis Specific Elements */
+.table-responsive {
+  overflow-x: auto;
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+}
+
+.analysis-table {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 600px;
+  background: var(--bg-surface-2);
+}
+
+.analysis-table th,
+.analysis-table td {
+  padding: var(--space-3) var(--space-4);
+  text-align: left;
+  border-bottom: 1px solid var(--border-glass);
+  color: var(--text-secondary);
+  font-size: var(--font-base);
+}
+
+.analysis-table th {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.analysis-table tr:last-child td {
+  border-bottom: none;
+}
+
+.flowchart-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2);
+  background: var(--bg-surface-2);
+  padding: var(--space-4);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-glass);
+  color: var(--color-primary-light);
+  font-family: monospace;
+  font-size: var(--font-sm);
+  margin-bottom: var(--space-4);
+}
+
+.flowchart-box span {
+  background: var(--bg-surface);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-glass);
+  color: var(--text-primary);
+}
