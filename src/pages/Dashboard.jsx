@@ -56,6 +56,27 @@ export default function Dashboard() {
       {/* Risk alert */}
       <RiskAlertBanner riskLevel={riskLevel} />
 
+      {/* Project Introduction Banner */}
+      <section className="section dashboard-intro-banner animate-fade-in-up">
+        <div className="glass-card glass-inner intro-card">
+          <div className="intro-icon">💡</div>
+          <div className="intro-content">
+            <h2 className="intro-title">EconoMind AI Dashboard</h2>
+            <p className="intro-text">
+              <strong>The Problem:</strong> Traditional economic forecasting relies on limited datasets and struggles to adapt to rapidly changing global environments. Forecasting errors lead to poor policy decisions and inefficient resource allocation.
+            </p>
+            <p className="intro-text">
+              <strong>The Solution:</strong> This research project leverages advanced Artificial Intelligence and Machine Learning (Linear Regression, Decision Trees, Random Forest, Neural Networks) to process large-scale data and generate highly accurate predictions for GDP, inflation, and unemployment.
+            </p>
+            <div className="intro-tags">
+              <span className="about-tag primary">Research by B. Roshan</span>
+              <span className="about-tag accent">92% Accuracy</span>
+              <span className="about-tag">Real-Time</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* KPI Grid */}
       <section className="section">
         <div className="section-title">📊 Key Economic Indicators</div>
