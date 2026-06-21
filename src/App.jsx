@@ -12,6 +12,7 @@ import Scenarios   from './pages/Scenarios';
 import RiskEthics  from './pages/RiskEthics';
 import Literature  from './pages/Literature';
 import About       from './pages/About';
+import FullAnalysis from './pages/FullAnalysis';
 
 function ProtectedLayout() {
   const { isAuthenticated, loading } = useAuth();
@@ -42,6 +43,7 @@ function ProtectedLayout() {
             <Route path="/scenarios"  element={<Scenarios />} />
             <Route path="/risk"       element={<RiskEthics />} />
             <Route path="/literature" element={<Literature />} />
+            <Route path="/analysis"   element={<FullAnalysis />} />
             <Route path="/about"      element={<About />} />
             <Route path="*"           element={<Navigate to="/" replace />} />
           </Routes>

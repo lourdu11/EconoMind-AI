@@ -1,0 +1,95 @@
+.analysis-content {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+}
+
+.analysis-section {
+  padding: var(--space-6);
+  border-radius: var(--radius-xl);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-glass);
+  box-shadow: var(--shadow-md);
+}
+
+.analysis-section h2 {
+  font-size: var(--font-2xl);
+  color: var(--color-primary-light);
+  margin-bottom: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  border-bottom: 1px solid var(--border-glass);
+  padding-bottom: var(--space-3);
+}
+
+.analysis-section h3 {
+  font-size: var(--font-xl);
+  color: var(--text-primary);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+.analysis-section p {
+  color: var(--text-secondary);
+  line-height: 1.8;
+  margin-bottom: var(--space-4);
+  font-size: var(--font-base);
+}
+
+.analysis-list {
+  list-style: none;
+  padding-left: 0;
+  margin-bottom: var(--space-4);
+}
+
+.analysis-list li {
+  position: relative;
+  padding-left: var(--space-6);
+  margin-bottom: var(--space-3);
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+.analysis-list li::before {
+  content: '▹';
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+  font-size: 1.2em;
+}
+
+.analysis-highlight {
+  background: var(--gradient-card);
+  padding: var(--space-4);
+  border-left: 4px solid var(--color-primary);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  margin-top: var(--space-4);
+}
+
+.methodology-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: var(--space-4);
+  margin-top: var(--space-4);
+}
+
+.methodology-card {
+  background: var(--bg-surface-2);
+  padding: var(--space-5);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-glass);
+  transition: transform var(--transition-fast);
+}
+
+.methodology-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-accent);
+}
+
+.methodology-card h4 {
+  color: var(--color-accent-light);
+  margin-bottom: var(--space-2);
+  font-size: var(--font-lg);
+}

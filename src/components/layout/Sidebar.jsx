@@ -2,7 +2,7 @@ import { NavLink, useLocation } from 'react-router-dom';
 import { useAuth } from '../../context/AuthContext';
 import {
   MdDashboard, MdQueryStats, MdScience, MdWarning,
-  MdMenuBook, MdInfo, MdLogout, MdAutoGraph
+  MdMenuBook, MdInfo, MdLogout, MdAutoGraph, MdAnalytics
 } from 'react-icons/md';
 import './Sidebar.css';
 
@@ -12,6 +12,7 @@ const NAV = [
   { to: '/scenarios',  icon: <MdScience />,     label: 'Scenarios'    },
   { to: '/risk',       icon: <MdWarning />,     label: 'Risk & Ethics'},
   { to: '/literature', icon: <MdMenuBook />,    label: 'Literature'   },
+  { to: '/analysis',   icon: <MdAnalytics />,   label: 'Full Analysis'},
   { to: '/about',      icon: <MdInfo />,        label: 'About'        },
 ];
 
